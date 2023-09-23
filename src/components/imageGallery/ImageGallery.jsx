@@ -23,13 +23,15 @@ const ImageGallery = () => {
   };
 
   return (
-    <>
-      <h1>
-        Results for:{" "}
-        <span style={{ color: "red" }}>{searchImage || "Art"}</span>
-      </h1>
+    <div>
+      <div>
+        <h1>
+          Results for:{" "}
+          <span style={{ color: "red" }}>{searchImage || "Art"}</span>
+        </h1>
+      </div>
       <DragDropContext onDragEnd={handleOnDragEnd}>
-        <Droppable droppableId={`grid-${searchImage || " "}`}>
+        <Droppable droppableId="grid">
           {(provided) => (
             <div
               className={styles.grid}
@@ -51,13 +53,13 @@ const ImageGallery = () => {
                         {...provided.dragHandleProps}
                         ref={provided.innerRef}
                       >
-                        {/* <Images key={key} data={data} /> */}
-                        <img
-                          // key={key}
+                        <Images key={key} data={data} />
+                        {/* <img
+                          key={key}
                           className={styles.img}
                           src={data.urls.small}
                           alt={data.alt_description}
-                        />
+                        /> */}
                       </div>
                     )}
                   </Draggable>
@@ -68,7 +70,7 @@ const ImageGallery = () => {
           )}
         </Droppable>
       </DragDropContext>
-    </>
+    </div>
   );
 };
 
