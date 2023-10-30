@@ -1,6 +1,6 @@
-# HNGx Task Three
 
-## Drag and Drop Image Gallery
+
+# Drag and Drop Image Gallery
 
 ### Objective:
 You will implement a fully functional and responsive image gallery that showcases a collection of images in a visually appealing way.
