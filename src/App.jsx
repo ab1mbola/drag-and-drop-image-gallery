@@ -1,13 +1,11 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-// import { Route, Router, Routes } from "react-router-dom";
-import ImageGallery from "./components/imageGallery/ImageGallery";
 import Login from "./components/Login/Login";
 import Home from "./components/home/Home";
+import Signup from "./components/Signup/Signup";
 import useAxios from "./hooks/useAxios";
 import { createContext, useState } from "react";
 
 export const ImageContext = createContext();
-
 
 function App() {
   const [searchImage, setSearchImage] = useState("");
@@ -30,11 +28,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/home" element={<Home />} />
         </Routes>
       </Router>
-      {/* <Login /> */}
-      {/* <ImageGallery /> */}
     </ImageContext.Provider>
   );
 }
